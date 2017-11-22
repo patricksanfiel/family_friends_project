@@ -24,7 +24,7 @@
 
   <% else %>
     <%= form.label :product_id %><br>
-    <%= form.text_field :product_id, id: :review_product_id, disabled: true, value: @product.id %>
+    <%= form.hidden_field :product_id, id: :review_product_id, value: @product.id %>
 
   <% end %>
 

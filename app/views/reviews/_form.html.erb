@@ -23,7 +23,6 @@
     </div>
 
   <% else %>
-    <%= form.label :product_id %><br>
     <%= form.hidden_field :product_id, id: :review_product_id, value: @product.id %>
 
   <% end %>

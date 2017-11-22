@@ -15,5 +15,19 @@
   <%= number_to_currency(@product.price_in_cents) %>
 </p>
 
+<h3>Reviews</h3>
+<% @product.reviews.each do |review| %>
+  <p>
+    <%= review.comment %>
+    <br>
+    Added on: <%= review.created_at %>
+  </p>
+<% end %>
+
+<h3>New Review</h3>
+<% if @product.reviews %>
+<%= render 'reviews/form' %>
+<% end %>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

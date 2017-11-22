@@ -11,28 +11,25 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
-    <%= form.label :comment %>
+  <div class="field">
+    <%= form.label :comment %><br>
     <%= form.text_area :comment, id: :review_comment %>
   </div>
 
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id, id: :review_product_id %>
-  </div>
+  <% if @product.nil? %>
+    <div class="field">
+      <%= form.label :product_id %><br>
+      <%= form.text_field :product_id, id: :review_product_id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div> -->
-
-  <div class="field">
-    <%= form.label :comment %><br>
-    <%= form.text_area :comment %>
-  </div>
+  <% else %>
     <%= form.label :product_id %><br>
-    <%= form.text_field :product_id, disabled: true, value: @product.id %>
-  <!-- <%# end %> -->
+    <%= form.text_field :product_id, id: :review_product_id, disabled: true, value: @product.id %>
+
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

@@ -13,3 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){
+  setTimeout(function(){ 
+  $('.close').trigger('click')
+}, 2500);
+})

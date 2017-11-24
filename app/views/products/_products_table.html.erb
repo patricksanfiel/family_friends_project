@@ -1,0 +1,29 @@
+<% @products.each do |product| %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= number_to_currency product.price_in_cents %></td>
+      <td>
+          <%= link_to "View", product %>
+          <%= link_to "Edit", edit_product_path(product) %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }  %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% end %>

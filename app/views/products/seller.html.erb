@@ -1,0 +1,18 @@
+<h1>My Listings</h1>
+
+
+<% if current_user.products.present? %>
+
+<%= render partial: 'products_table' %>
+
+<% else %>
+  
+    <H4 class="no-listing"> No Listings Found </H4>
+
+<% end %>
+
+</div>
+
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_product_path %>
+<% end %>

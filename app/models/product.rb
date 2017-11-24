@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-  has_many :reviews
+  belongs_to :user
+  has_many :reviews, dependent: :destroy
   validates :description, :name, presence: true
   validates :price_in_cents, numericality: {greater_than: 0}
   # def formatted_price

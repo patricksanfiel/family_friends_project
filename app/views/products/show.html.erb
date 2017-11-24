@@ -13,6 +13,23 @@
   <%= number_to_currency(@product.price_in_cents) %>
 </p>
 
+<%= form_tag charges_path do %>
+  <%=  hidden_field_tag :price, @product.price_in_cents %> 
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= @product.name %>"
+          data-amount="<%= (@product.price_in_cents) * 100 %>"
+          data-locale="auto"></script>
+<% end %>
+
 <h3>Reviews</h3>
 <% @product.reviews.each do |review| %>
   <p>
@@ -21,6 +38,7 @@
     Added: <%= time_ago_in_words(review.created_at) %> ago
   </p>
 <% end %>
+
 
 <h3>New Review</h3>
 <% if @product.reviews %>
@@ -33,7 +51,6 @@
 <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <% end %>
-
 
 
 <%= link_to 'Back', products_path %>

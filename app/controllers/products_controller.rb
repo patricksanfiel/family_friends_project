@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
+  
+  def seller
+    @products = Product.where(user: current_user).order("created_at DESC")
+  end
+
   def index
     @products = Product.all
   end
@@ -26,6 +32,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.user_id = current_user.id
 
     respond_to do |format|
       if @product.save
@@ -71,5 +78,11 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :price_in_cents)
+    end
+
+    def check_user
+      if current_user.id != @product.user_id
+        redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
+      end
     end
 end

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   
   root 'products#index'
 
+  get 'my-account', to: 'products#seller'
+
 end

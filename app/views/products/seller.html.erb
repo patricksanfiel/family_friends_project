@@ -14,5 +14,8 @@
 </div>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_product_path %>
+  <%= link_to 'New Listing |', new_product_path %>
+  <%= link_to 'Manage My Account |', edit_user_registration_path %>
+  <%= link_to 'Back', products_path %>
+
 <% end %>

@@ -1,3 +1,5 @@
+<%= image_tag @product.image.url(:medium) %>
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -13,22 +15,23 @@
   <%= number_to_currency(@product.price_in_cents) %>
 </p>
 
+<% unless user_signed_in? && (current_user.id == @product.user_id) %>
+  <%= form_tag charges_path do %>
+    <%=  hidden_field_tag :price, @product.price_in_cents %> 
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </article>
 
-<%= form_tag charges_path do %>
-  <%=  hidden_field_tag :price, @product.price_in_cents %> 
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="<%= @product.name %>"
-          data-amount="<%= (@product.price_in_cents) * 100 %>"
-          data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="<%= @product.name %>"
+            data-amount="<%= (@product.price_in_cents) * 100 %>"
+            data-locale="auto"></script>
+  <% end %>
 <% end %>
 
 <h3>Reviews</h3>

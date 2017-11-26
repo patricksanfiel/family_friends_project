@@ -16,8 +16,8 @@
 </p>
 
 <% unless user_signed_in? && (current_user.id == @product.user_id) %>
-  <%= form_tag charges_path do %>
-    <%=  hidden_field_tag :price, @product.price_in_cents %> 
+  <%= form_tag product_charges_path(@product) do %>
+    <%#=  hidden_field_tag :price, @product.price_in_cents %> 
     <article>
       <% if flash[:error].present? %>
         <div id="error_explanation">
@@ -29,7 +29,7 @@
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="<%= @product.name %>"
-            data-amount="<%= (@product.price_in_cents) * 100 %>"
+            data-amount=""
             data-locale="auto"></script>
   <% end %>
 <% end %>

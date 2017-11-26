@@ -1,12 +1,13 @@
 class ChargesController < ApplicationController
+  before_action :set_product
 
   def new
   end
 
   def create
     # Amount in cents
-    @amount = params[:price]
-    @amount_cents = (params[:price].to_i) * 100
+    @amount = @amount.price_in_cents
+    @amount_cents = (@amount.price_in_cents.to_i) * 100
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -23,6 +24,10 @@ class ChargesController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  def set_product
+    @amount = Product.find(params[:product_id])
   end
 
 

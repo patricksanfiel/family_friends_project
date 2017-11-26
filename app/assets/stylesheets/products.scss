@@ -1,3 +1,21 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-style: Black;
+  font-size: 100px;
+}
+
+.cell{
+  width: 25%;
+}
+.description{
+  width: 50%;
+}
+
+.card small {
+  display: inline-block;
+}

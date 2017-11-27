@@ -21,13 +21,27 @@ body {
   padding-bottom: 80px;
 }
 
+.alert {
+  margin-top: 25px;
+}
+
 .cursor {
   cursor: pointer;
+}
+
+.navbar a, 
+.navbar a:hover {
+  color: #FFF;
+}
+
+.card-listing-title  {
+  color: #2c3e50;
 }
 
 
 .home-container {
   margin-bottom: 100px;
+  margin-top: 30px;
 }
 
 .padding {
@@ -42,6 +56,15 @@ body {
 
 /* Navbar */
 
+.navbar-brand {
+  vertical-align: middle;
+  margin-top: 12px;
+}
+
+.sign-up-btn > .btn:hover {
+  background: green !important;
+  transition: none !important;
+}
                
 .btn .fa {
     margin-left: 3px;
@@ -206,5 +229,44 @@ p {
 
 .show-page {
   margin: auto;
+}
+
+.reviews {
+  margin: 50px 300px;
+}
+
+/* Seller Page */
+
+.seller-background {
+  background: #f7f7f7;
+}
+
+table {
+    /*border-collapse: separate;*/
+    border-spacing: 10px 50px;
+}
+
+.products-listing-table {
+  margin: auto;
+  margin-top: 100px;
+}
+
+table th {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-align: center;
+}
+
+table td {
+  text-align: center;
+}
+
+.table-fixed {
+    table-layout: fixed; 
+    overflow: hidden;
+}
+
+.no-listing {
+  margin-bottom: 30px;
 }
 

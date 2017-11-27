@@ -1,70 +1,80 @@
-
+<% content_for :body_class, 'seller-background' %>
 
 <div class="row">
   <div class="col-md-8 show-page"><!--Card-->
     <div class="card card-cascade wider reverse my-4 ">
-    
-        <!--Card image-->
-        <div class="view hm-white-slight">
-            <%= image_tag @product.image, class: 'img-fluid', width: '100%' %>
-                <div class="mask"></div>
-        </div>
-        <!--/Card image-->
-    
-        <!--Card content-->
-        <div class="card-body text-center">
-            <!--Title-->
-            <h4 class="card-title"><%= @product.name %></h4>
-    
-            <p class="card-text"><%= number_to_currency(@product.price_in_cents) %></p>
 
-            <% unless user_signed_in? && (current_user.id == @product.user_id) %>
-              <%= form_tag product_charges_path(@product) do %>
-                <article>
-                  <% if flash[:error].present? %>
-                    <div id="error_explanation">
-                      <p><%= flash[:error] %></p>
-                    </div>
-                  <% end %>
-                </article>
+      <!--Card image-->
+      <div class="view hm-white-slight">
+        <%= image_tag @product.image, class: 'img-fluid', width: '100%' %>
+        <div class="mask"></div>
+      </div>
+      <!--/Card image-->
 
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                        data-description="<%= @product.name %>"
-                        data-amount="<%= (@product.price_in_cents) * 100 %>"
-                        data-locale="auto"></script>
-              <% end %>
-            <% end %>
+      <!--Card content-->
+      <div class="card-body text-center">
+        <!--Title-->
+        <h2 class="card-title"><%= @product.name %></h4>
 
-    
-        </div>
-        <!--/.Card content-->
-    
+        <p class="card-text"><%= @product.description %></p>
+        <p class="card-text"><%= number_to_currency(@product.price_in_cents) %></p>
+
+        <% unless user_signed_in? && (current_user.id == @product.user_id) %>
+        <%= form_tag product_charges_path(@product) do %>
+        <article>
+          <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+          <% end %>
+        </article>
+
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="<%= @product.name %>"
+        data-amount="<%= (@product.price_in_cents) * 100 %>"
+        data-locale="auto">
+        </script>
+        <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+        </script>
+        <button type="submit" class="btn btn-deep-orange">Purchase</button>
+        <% end %>
+        <% end %>
+
+
+      </div>
+      <!--/.Card content-->
+
     </div>
-    <!--/.Card--></div>
+    
+  </div>
 </div>
 
 
-<h3>Reviews</h3>
-
-<% @product.reviews.each do |review| %>
+<div class="reviews">
+  <h3>Reviews</h3>
+  
+  <% @product.reviews.each do |review| %>
   <p>
     <%= review.comment %>
     <br>
     Added: <%= time_ago_in_words(review.created_at) %> ago
   </p>
-<% end %>
-
-<% if @product.reviews %>
-<%= render 'reviews/form' %>
-<% end %>
-
-<% if user_signed_in? && (current_user.id == @product.user_id) %>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<% end %>
-
-
-<%= link_to 'Back', products_path %>
+  <% end %>
+  
+  <% if @product.reviews %>
+  <%= render 'reviews/form' %>
+  <% end %>
+  
+  <% if user_signed_in? && (current_user.id == @product.user_id) %>
+  
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  
+  <% end %>
+  
+  <hr>
+  <%= link_to 'Back', products_path, class: "btn btn-sm btn-secondary" %></div>

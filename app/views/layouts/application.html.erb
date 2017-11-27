@@ -20,8 +20,13 @@
   <body class="<%= content_for :body_class %>">
     
     <div <% if controller.action_name != 'home' %> class="home-container padding" <% end %> >
-      <%= render "shared/application_nav" %>
+
+      <% if controller.action_name != 'home' %> 
       <%= render 'layouts/messages' %>
+      <% end %>
+      
+      <%= render "shared/application_nav" %> 
+
       <%= yield %>
     </div>
   </body>

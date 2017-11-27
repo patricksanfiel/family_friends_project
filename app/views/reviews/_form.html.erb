@@ -11,9 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :comment %><br>
-    <%= form.text_area :comment, id: :review_comment %>
+  <div class="md-form">
+    <%= form.text_area :comment, id: :review_comment, class: 'form-control', placeholder: "Comment" %>
   </div>
 
   <% if @product.nil? %>
@@ -28,7 +27,7 @@
   <% end %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-md btn-primary" %>
   </div>
 
 <% end %>

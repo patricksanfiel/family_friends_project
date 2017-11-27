@@ -1,0 +1,15 @@
+<%= render 'masthead' %>
+
+<div class="latest-listings">
+  <h1>Latest Listings</h1>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="row home-listings-container">
+    
+    <%= render partial: 'product', collection: @products %> 
+
+  </div>
+
+</div>

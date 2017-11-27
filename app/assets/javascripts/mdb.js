@@ -13420,6 +13420,16 @@ $(window).scroll(function () {
     $('.scrolling-navbar').removeClass('top-nav-collapse');
   }
 });
+
+  $(window).scroll(function () {
+  if ($('.navbar').offset().top > OFFSET_TOP) {
+    $('.scrolling-navbar').addClass('top-nav-collapse');
+  } else if ($('#home').value === 'yes'){
+    $('.scrolling-navbar').removeClass('top-nav-collapse');
+  }
+});
+
+
 /*!
  * Waves v0.7.5
  * http://fian.my.id/Waves

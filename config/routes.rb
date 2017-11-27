@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   resources :products do
     resources :charges
   end
-  
-  root 'products#index'
 
   get 'my-account', to: 'products#seller'
+  root 'pages#home'
+
+  get 'test', to: 'pages#test'
 
 end

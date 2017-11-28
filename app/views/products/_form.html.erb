@@ -10,31 +10,38 @@
       </ul>
     </div>
   <% end %>
+
 <div class="login-container">
 
+<div class="card new-product-card">
+  <h1 class="new-product">New Product</h1>
   <div class="md-form">
     <%= form.label :name %>
     <%= form.text_field :name, id: :product_name, class: "form-control" %>
   </div>
-
-  <div class="md-form">
-    <%= form.label :image %>
-    <%= form.file_field :image, class: "form-control btn-light" %>
+  
+  <div class="form-group">
+    <label class="btn btn-primary btn-sm">
+      Upload Image <%= form.file_field :image, style: 'display:none' %>
+    </label>
   </div>
-
+  
   <div class="md-form">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description, class: "form-control" %>
+    
+    <%= form.text_area :description, id: :product_description, class: "form-control text-area-description", placeholder: "Description" %>
   </div>
-
+  
   <div class="md-form">
     <%= form.label :price %>
     <%= form.number_field :price_in_cents, id: :product_price_in_cents, step: 0.01, class: "form-control" %>
   </div>
-
+  
   <div class="actions">
     <%= form.submit class:"btn btn-primary" %>
   </div>
-
+  <hr>
+  <%= link_to 'Back', products_path, class: 'btn btn-secondary btn-sm' %>
+  
+  </div>
 </div>
 <% end %>

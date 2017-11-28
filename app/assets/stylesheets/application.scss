@@ -247,7 +247,7 @@ table {
 
 .products-listing-table {
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 table th {
@@ -288,10 +288,6 @@ table td {
 .home-jumbo{
   height: 25em;
 }
-.new_user{
-  width: 45%;
-  text-align: center;
-}
 
 // new product
 
@@ -314,7 +310,25 @@ table td {
   padding-left: 20px !important;
 }
 
+.white-background-text {
+  background-color: #FFF;
+}
+
 .new-listing-btn {
   text-align: center;
+}
+
+.listings-title {
+  text-align: center;
+}
+
+.time-ago {
+  font-style: italic;
+  font-size: 0.8em
+}
+
+.comment-text {
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 

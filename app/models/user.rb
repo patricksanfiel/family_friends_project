@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true
 
+  def to_s
+    "#{self.email}"
+  end
+
 end

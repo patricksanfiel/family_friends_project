@@ -44,7 +44,6 @@
         <% end %>
         <% end %>
 
-
       </div>
       <!--/.Card content-->
 
@@ -59,9 +58,13 @@
   
   <% @product.reviews.each do |review| %>
   <p>
+    <hr>
+   <div class="comment-text">
+      <strong>Comment by: <%= review.product.user %></strong>
+   </div>
     <%= review.comment %>
     <br>
-    Added: <%= time_ago_in_words(review.created_at) %> ago
+    <div class="time-ago">Added <%= time_ago_in_words(review.created_at) %> ago</div>
   </p>
   <% end %>
   

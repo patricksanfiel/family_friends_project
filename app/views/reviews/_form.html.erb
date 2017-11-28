@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <div class="md-form">
-    <%= form.text_area :comment, id: :review_comment, class: 'form-control', placeholder: "Comment" %>
+  <div class="md-form white-background-text">
+    <%= form.text_area :comment, id: :review_comment, class: 'form-control text-area-description', placeholder: "Comment" %>
   </div>
 
   <% if @product.nil? %>

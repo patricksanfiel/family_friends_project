@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
+<div class="login-container">
 
-  <div class="field">
+  <div class="md-form">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
+    <%= form.text_field :name, id: :product_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="md-form">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, class: "form-control btn-light" %>
   </div>
 
-  <div class="field">
+  <div class="md-form">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description %>
+    <%= form.text_area :description, id: :product_description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="md-form">
     <%= form.label :price %>
-    <%= form.number_field :price_in_cents, id: :product_price_in_cents, step: 0.01 %>
+    <%= form.number_field :price_in_cents, id: :product_price_in_cents, step: 0.01, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
+
+</div>
 <% end %>

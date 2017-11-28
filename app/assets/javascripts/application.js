@@ -10,15 +10,23 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
+//= require jquery
 //= require popper
 //= require rails-ujs
 //= require_tree .
 
-console.log('Hello!')
+console.log('hello')
 
-$(function(){
-  setTimeout(function(){ 
-  $('.close').trigger('click')
-}, 2500);
+$(window).scroll(function () {
+  if ($('.navbar').offset().top > OFFSET_TOP) {
+    $('.scrolling-navbar').addClass('top-nav-collapse');
+  } else if ($('#home').value === 'yes'){
+    $('.scrolling-navbar').removeClass('top-nav-collapse');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){
+    document.querySelector('.close').click()
+  }, 2500);
 })

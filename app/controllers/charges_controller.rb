@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   before_action :set_product
+  layout 'application'
 
 
   def new

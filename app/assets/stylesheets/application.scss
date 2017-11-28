@@ -29,7 +29,7 @@ body {
   cursor: pointer;
 }
 
-.navbar a, 
+.navbar a,
 .navbar a:hover {
   color: #FFF;
 }
@@ -65,12 +65,12 @@ body {
   background: green !important;
   transition: none !important;
 }
-               
+
 .btn .fa {
     margin-left: 3px;
 }
 .top-nav-collapse {
-    background-color: #424f95 !important; 
+    background-color: #424f95 !important;
 }
 .navbar:not(.top-nav-collapse) {
     background: transparent !important;
@@ -78,7 +78,7 @@ body {
 @media (max-width: 768px) {
     .navbar:not(.top-nav-collapse) {
         background: #424f95 !important;
-    } 
+    }
 }
 h6 {
     line-height: 1.7;
@@ -88,7 +88,7 @@ h6 {
     background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
     background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.6)), to(rgba(29, 210, 177, 0.6)));
     background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
-    background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%); 
+    background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.6), rgba(29, 210, 177, 0.6) 100%);
 }
 @media (max-width: 450px) {
     .margins {
@@ -101,8 +101,8 @@ h6 {
     .full-height body,
     .full-height header,
     .full-height header .view {
-        height: 1020px; 
-    } 
+        height: 1020px;
+    }
 }
 
 /* Set font-styles */
@@ -262,7 +262,7 @@ table td {
 }
 
 .table-fixed {
-    table-layout: fixed; 
+    table-layout: fixed;
     overflow: hidden;
 }
 
@@ -270,3 +270,16 @@ table td {
   margin-bottom: 30px;
 }
 
+.paid{
+  font-family:"proxima-nova";
+  color:#999997;
+}
+
+.paid_amount{
+  font-family:"futura-pt-bold";
+  color:#85bb65;
+}
+
+.paid_container{
+  align-items: center;
+}

@@ -1,3 +1,4 @@
+
 <div class="card products-listing-table">
   <div class="card-body">
 
@@ -34,6 +35,10 @@
         <% end %>
       </tbody>
     </table>
-  </div>  
+    <div class="new-listing">
+    <% if user_signed_in? %>
+    <%= link_to 'New Listing', new_product_path, class: 'btn btn-primary new-listing-btn' %>
+    <% end %>
+  </div>
+  </div>
 </div>
-

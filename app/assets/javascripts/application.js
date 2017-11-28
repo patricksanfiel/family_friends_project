@@ -9,16 +9,17 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require jquery3
+
 //= require popper
 //= require rails-ujs
 //= require_tree .
 
-console.log('Hello!')
+var OFFSET_TOP = 50;
 
-$(function(){
-  setTimeout(function(){ 
-  $('.close').trigger('click')
-}, 2500);
+
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){
+    document.querySelector('.close').click()
+  }, 2500);
+  
 })

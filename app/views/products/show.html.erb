@@ -48,14 +48,24 @@
       <!--/.Card content-->
 
     </div>
-    
+
   </div>
+</div>
+
+<div class="new-product-edit-destroy-buttons">
+
+<% if user_signed_in? && (current_user.id == @product.user_id) %>
+
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-amber btn-sm" %> |
+<%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-deep-orange btn-sm" %>
+
+<% end %>
 </div>
 
 
 <div class="reviews">
   <h3>Reviews</h3>
-  
+
   <% @product.reviews.each do |review| %>
   <p>
     <hr>
@@ -67,17 +77,11 @@
     <div class="time-ago">Added <%= time_ago_in_words(review.created_at) %> ago</div>
   </p>
   <% end %>
-  
+
   <% if @product.reviews %>
   <%= render 'reviews/form' %>
   <% end %>
-  
-  <% if user_signed_in? && (current_user.id == @product.user_id) %>
-  
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Destroy', @product, method: :delete, data: { confirm: 'Are you sure?' } %>
-  
-  <% end %>
-  
+
+
   <hr>
   <%= link_to 'Back', products_path, class: "btn btn-sm btn-secondary" %></div>

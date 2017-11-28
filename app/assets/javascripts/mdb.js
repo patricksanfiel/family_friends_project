@@ -13413,22 +13413,13 @@ WOW.prototype.doSync = function (node) {
 /* SCROLLING NAVBAR */
 var OFFSET_TOP = 50;
 
-$(window).scroll(function () {
-  if ($('.navbar').offset().top > OFFSET_TOP) {
-    $('.scrolling-navbar').addClass('top-nav-collapse');
-  } else {
-    $('.scrolling-navbar').removeClass('top-nav-collapse');
-  }
-});
-
   $(window).scroll(function () {
   if ($('.navbar').offset().top > OFFSET_TOP) {
     $('.scrolling-navbar').addClass('top-nav-collapse');
-  } else if ($('#home').value === 'yes'){
+  } else if ($('#home').val() === 'yes'){
     $('.scrolling-navbar').removeClass('top-nav-collapse');
   }
 });
-
 
 /*!
  * Waves v0.7.5
@@ -13439,7 +13430,6 @@ $(window).scroll(function () {
  * https://github.com/fians/Waves/blob/master/LICENSE
  */
 
-;
 (function (window, factory) {
     'use strict';
 

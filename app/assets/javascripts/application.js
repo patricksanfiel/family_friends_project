@@ -9,24 +9,32 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require jquery
+
 //= require popper
 //= require rails-ujs
 //= require_tree .
 
-console.log('hello')
+var OFFSET_TOP = 50;
 
-$(window).scroll(function () {
-  if ($('.navbar').offset().top > OFFSET_TOP) {
-    $('.scrolling-navbar').addClass('top-nav-collapse');
-  } else if ($('#home').value === 'yes'){
-    $('.scrolling-navbar').removeClass('top-nav-collapse');
-  }
-});
+// $(function(){
+//   $(window).scroll(function () {
+//     if (typeof $('#home') !== undefined) {
+//       if ($('.navbar').offset().top > OFFSET_TOP) {
+//         $('.scrolling-navbar').addClass('top-nav-collapse');
+//       }else{
+//         $('.scrolling-navbar').removeClass('top-nav-collapse');
+//       }
+//     }else {
+//       console.log('fff')
+//       $('.scrolling-navbar').removeClass('top-nav-collapse');
+//     }
+//   });
+  
+// })
 
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){
     document.querySelector('.close').click()
   }, 2500);
+  
 })

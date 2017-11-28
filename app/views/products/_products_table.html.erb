@@ -1,36 +1,35 @@
-<%= @products.each do |product| %>
+<div class="card products-listing-table">
+  <div class="card-body">
 
-  <div class="card products-listing-table">
-    <div class="card-body">
+    <table class="table table-responsive table-fixed">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
 
-        <table class="table table-responsive table-fixed">
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          
-          <tbody>
-            <tr>
-              <td><%= image_tag product.image.url, width: '100%' %></td>
-              <td><%= product.name %></td>
-              <td><%= number_to_currency product.price_in_cents %></td>
-              <td>
-                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit </button>
-                <div class="dropdown-menu">
-                  <%= link_to "View", product, class: 'dropdown-item' %>
-                  <%= link_to "Edit", edit_product_path(product), class: 'dropdown-item' %>
-                  <div class="dropdown-divider"></div>
-                  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item'  %>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
-  </div>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= image_tag product.image.url, width: '100%' %></td>
+          <td><%= product.name %></td>
+          <td><%= number_to_currency product.price_in_cents %></td>
+          <td>
+            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit </button>
+            <div class="dropdown-menu">
+              <%= link_to "View", product, class: 'dropdown-item' %>
+              <%= link_to "Edit", edit_product_path(product), class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item'  %>
+            </div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>  
+</div>
 
-<% end %>

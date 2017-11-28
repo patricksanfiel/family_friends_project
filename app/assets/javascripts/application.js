@@ -16,21 +16,6 @@
 
 var OFFSET_TOP = 50;
 
-// $(function(){
-//   $(window).scroll(function () {
-//     if (typeof $('#home') !== undefined) {
-//       if ($('.navbar').offset().top > OFFSET_TOP) {
-//         $('.scrolling-navbar').addClass('top-nav-collapse');
-//       }else{
-//         $('.scrolling-navbar').removeClass('top-nav-collapse');
-//       }
-//     }else {
-//       console.log('fff')
-//       $('.scrolling-navbar').removeClass('top-nav-collapse');
-//     }
-//   });
-  
-// })
 
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){

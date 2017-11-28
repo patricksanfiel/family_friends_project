@@ -108,6 +108,7 @@ h6 {
 
 h1, h2, h3, h4 {
   font-family: "futura-pt-bold";
+  color: #141823;
 }
 
 p {
@@ -129,6 +130,7 @@ p {
 
 .py-5 .jumbo-header {
   font-size: 90px;
+  color: #FFF;
 
 }
 
@@ -140,7 +142,7 @@ p {
 
 .latest-listings {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .latest-listings hr {
@@ -171,6 +173,14 @@ p {
 
 
 /* listing card style */
+
+span.left {
+  color: #303e4e !important;
+}
+
+span.right {
+  color: gray !important;
+}
 
 .listing-card {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
@@ -314,9 +324,12 @@ table td {
   background-color: #FFF;
 }
 
+
 .new-listing-btn {
-  text-align: center;
+  margin-left: 578px;
+  margin-top: 20px;
 }
+
 
 .listings-title {
   text-align: center;
@@ -324,7 +337,8 @@ table td {
 
 .time-ago {
   font-style: italic;
-  font-size: 0.8em
+  font-size: 0.8em;
+  margin-top: 1em;
 }
 
 .comment-text {
@@ -336,6 +350,11 @@ table td {
   text-align: center;
 }
 
-.edit-user-padding-bottom{
+.edit-user-padding-bottom {
   padding-bottom: 1.3em;
+}
+
+.comment-body {
+  font-weight: 400;
+
 }

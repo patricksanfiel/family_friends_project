@@ -1,19 +1,18 @@
 <% content_for :body_class, 'seller-background' %>
 
 <div class="row">
+<div class="show-page">
 
 <% if current_user.products.present? %>
 
 <%= render partial: 'products_table' %>
 
 <% else %>
-  
+
     <H4 class="no-listing"> No Listings Found </H4>
 
 <% end %>
 
-</div>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Listing', new_product_path, class: 'btn btn-primary new-listing-btn' %>
-<% end %>
+</div>
+</div>

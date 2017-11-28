@@ -14,7 +14,6 @@
 <div class="login-container">
 
 <div class="card new-product-card">
-  <h1 class="new-product">New Product</h1>
   <div class="md-form">
     <%= form.text_field :name, id: :product_name, class: "form-control", placeholder: 'Name' %>
   </div>
@@ -38,7 +37,7 @@
     <%= form.submit class:"btn btn-light-green" %>
   </div>
   <hr>
-  <%= link_to 'Back', products_path, class: 'btn btn-secondary btn-sm' %>
+  <%= link_to 'back', products_path, class: 'btn btn-secondary btn-sm' %>
   
   </div>
 </div>

@@ -55,6 +55,7 @@ input#search-navigation {
   
 // }
 
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #FFF;
 }
@@ -174,7 +175,7 @@ p {
 /* HOME */
 
 .background {
-  background-image: url('home.jpg');
+  background-image: url('/images/home.jpg');
   background-size: cover;
 }
 

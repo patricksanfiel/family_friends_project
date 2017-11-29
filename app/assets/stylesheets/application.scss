@@ -48,6 +48,13 @@ input#search-navigation {
   color: #FFF;
 }
 
+.blue-gradient {
+  position: absolute;
+  top: 407px;
+  left: 634px;
+  
+}
+
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #FFF;
 }
@@ -80,6 +87,11 @@ li > a {
 
 li > a:hover {
   color: #ecf0f1;
+  text-decoration: underline;
+}
+
+li.search-items {
+  margin-top: 15px;
 }
 
 .search-text-results {
@@ -176,6 +188,10 @@ p {
 
 }
 
+.mb-5 {
+  margin-bottom: 0.2em !important;
+}
+
 .py-5 .jumbo-subtext {
   max-width: 800px;
   margin: auto;
@@ -185,6 +201,7 @@ p {
 .latest-listings {
   text-align: center;
   margin-bottom: 50px;
+  margin-top: 40px;
 }
 
 .latest-listings hr {
@@ -197,7 +214,9 @@ p {
 }
 
 .sell-button {
-  margin-top: 20px;
+  position: absolute;
+  top: 494px;
+  left: 637px;
 }
 
 .sell-button a {

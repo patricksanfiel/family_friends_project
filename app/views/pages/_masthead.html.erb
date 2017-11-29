@@ -12,11 +12,11 @@
 
                 <ul class="vertical navigation_list">
                  <% @products_all.each do |product| %>
-                 <li style="list-style: none;"> - <%= link_to product.name, product, class: 'search-text-results' %> </li>
+                 <li class="search-items" style="list-style: none;"> - <%= link_to product.name, product, class: 'search-text-results' %> </li>
                  <% end %>
                </ul>
              </div>
-              <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-lg blue-gradient' %>
+              <%= link_to 'Get Started', new_user_registration_path, class: 'btn btn-lg blue-gradient get-started' %>
 
              <div>
               <p class="sell-button"> Looking to sell? <%= link_to "Click here", new_product_path %></p>

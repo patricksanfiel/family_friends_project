@@ -23,12 +23,9 @@ $(document).ready(function() {
   });
 });
 
-var OFFSET_TOP = 50;
-
 
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){
     document.querySelector('.close').click()
-  }, 2500);
-  
+  }, 1750);
 })

@@ -23,6 +23,7 @@ body {
 
 .alert {
   margin-top: 25px;
+  margin-bottom: 0px !important;
 }
 
 .cursor {
@@ -40,7 +41,7 @@ body {
 
 
 .home-container {
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
   margin-top: 30px;
 }
 
@@ -49,10 +50,13 @@ input#search-navigation {
 }
 
 // .blue-gradient {
-//   position: absolute;
-//   top: 407px;
-//   left: 634px;
-  
+//   position: relative;
+//   z-index: 1;
+// }
+
+// .rgba-stylish-light {
+//   position: relative;
+//   z-index
 // }
 
 
@@ -84,6 +88,8 @@ li {
 
 li > a {
   color: #FFF;
+    position: relative;
+  z-index: 3;
 }
 
 li > a:hover {
@@ -289,8 +295,19 @@ span.right {
 }
 
 .login-background {
-  background-image: url('home.jpg');
+  background-image: url('/images/home.jpg');
   background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+    opacity: .45; 
+  }
 }
 
 

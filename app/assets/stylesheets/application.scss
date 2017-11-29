@@ -48,12 +48,12 @@ input#search-navigation {
   color: #FFF;
 }
 
-.blue-gradient {
-  position: absolute;
-  top: 407px;
-  left: 634px;
+// .blue-gradient {
+//   position: absolute;
+//   top: 407px;
+//   left: 634px;
   
-}
+// }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #FFF;
@@ -214,9 +214,7 @@ p {
 }
 
 .sell-button {
-  position: absolute;
-  top: 494px;
-  left: 637px;
+  margin-top: 20px;
 }
 
 .sell-button a {

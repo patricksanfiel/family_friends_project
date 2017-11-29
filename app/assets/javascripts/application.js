@@ -10,9 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
+//= require jquery3
 //= require popper
 //= require rails-ujs
 //= require_tree .
+
+$(document).ready(function() {
+  $('#search-navigation').hideseek({
+    nodata: 'No results found',
+    navigation: true,
+    hidden_mode: true
+  });
+});
 
 var OFFSET_TOP = 50;
 

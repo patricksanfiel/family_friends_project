@@ -27,5 +27,5 @@ $(document).ready(function() {
 document.addEventListener('DOMContentLoaded', function(){
   setTimeout(function(){
     document.querySelector('.close').click()
-  }, 1750);
+  }, 2250);
 })

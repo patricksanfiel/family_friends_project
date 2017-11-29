@@ -65,4 +65,3 @@ gem 'aws-sdk', '~> 2.3'
 # gem "carrierwave"
 gem "mini_magick"
 gem 'fog-aws'
-gem 'pg_search'

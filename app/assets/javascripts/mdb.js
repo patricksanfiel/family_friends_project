@@ -13891,7 +13891,7 @@ var OFFSET_TOP = 50;
             body.addEventListener('touchend', TouchHandler.registerEvent, false);
         }
 
-        body.addEventListener('mousedown', showEffect, false);
+        // body.addEventListener('mousedown', showEffect, false);
     };
 
 
